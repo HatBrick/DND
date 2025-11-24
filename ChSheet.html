@@ -1,6 +1,31 @@
 <html>
+  <head></head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     td {text-decoration-line: underline}
+    .container {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+    .top {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .bottom {
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   </style>
   <body>
     <!-- CHARACTER INFORMATION-->
@@ -20,37 +45,13 @@
     
     <!--  CORE STATS -->
     <table contenteditable>
-      <tr>
-        <th><img src="CoreStatBG.png"></th>
-        <th><img src="CoreStatBG.png"></th>
-        <th><img src="CoreStatBG.png"></th>
-        <th><img src="CoreStatBG.png"></th>
-        <th><img src="CoreStatBG.png"></th>
-        <th><img src="CoreStatBG.png"></th>
-      </tr>
-      <tr>
-        <th>Strength</th>
-        <th>Dexterity</th>
-        <th>Constitution</th>
-        <th>Intelligence</th>
-        <th>Wisdom</th>
-        <th>Charisma</th>
-      </tr>
-      <tr>
-        <td>10</td>
-        <td>10</td>
-        <td>10</td>
-        <td>10</td>
-        <td>10</td>
-        <td>10</td>
-      </tr>
-      <tr>
-        <td>+0</td>
-        <td>+0</td>
-        <td>+0</td>
-        <td>+0</td>
-        <td>+0</td>
-        <td>+0</td>
+      <tr class="container">
+        <th><img src="CoreStatBG.png"><div class="top">Strength</div><div class="center">10</div><div class="bottom">+0</div></th>
+        <th><img src="CoreStatBG.png"><div class="top">Dexterity</div><div class="center">10</div><div class="bottom">+0</div></th>
+        <th><img src="CoreStatBG.png"><div class="top">Constitution</div><div class="center">10</div><div class="bottom">+0</div></th>
+        <th><img src="CoreStatBG.png"><div class="top">Intelligence</div><div class="center">10</div><div class="bottom">+0</div></th>
+        <th><img src="CoreStatBG.png"><div class="top">Wisdom</div><div class="center">10</div><div class="bottom">+0</div></th>
+        <th><img src="CoreStatBG.png"><div class="top">Charisma</div><div class="center">10</div><div class="bottom">+0</div></th>
       </tr>
     </table>
 
