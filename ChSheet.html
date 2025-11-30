@@ -33,6 +33,7 @@
   function up(e) {
     if (drag && si != tr.index()) {
       drag = false;
+      alert("moved!");
     }
     $(document).unbind("mousemove", move).unbind("mouseup", up);
     b.removeClass("grabCursor").css("userSelect", "none");
