@@ -1,7 +1,61 @@
 <html>
   <head></head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    //Draggable code
+    $(".grab").mousedown(function(e) {
+      var tr = $(e.target).closest("TR"),
+        si = tr.index(),
+        sy = e.pageY,
+        b = $(document.body),
+        drag;
+      if (si == 0) return;
+      b.addClass("grabCursor").css("userSelect", "none");
+      tr.addClass("grabbed");
+
+      function move(e) {
+      if (!drag && Math.abs(e.pageY - sy) < 10) return;
+      drag = true;
+      tr.siblings().each(function() {
+        var s = $(this),
+          i = s.index(),
+          y = s.offset().top;
+      if (i > 0 && e.pageY >= y && e.pageY < y + s.outerHeight()) {
+        if (i < tr.index())
+          tr.insertAfter(s);
+        else
+          tr.insertBefore(s);
+        return false;
+      }
+    });
+  }
+
+  function up(e) {
+    if (drag && si != tr.index()) {
+      drag = false;
+    }
+    $(document).unbind("mousemove", move).unbind("mouseup", up);
+    b.removeClass("grabCursor").css("userSelect", "none");
+    tr.removeClass("grabbed");
+  }
+  $(document).mousemove(move).mouseup(up);
+});
+  </script>
   <style>
+    /*Draggable rows code*/
+    .grab {
+      cursor: grab;
+    }
+
+    .grabbed {
+      box-shadow: 0 0 13px #000;
+    }
+
+    .grabCursor,
+    .grabCursor * {
+      cursor: grabbing !important;
+    }
+    /*GENERAL CODE*/
     table {width:100%;border-collapse:collapse;}
     tr {border-bottom: 1px solid;}
     th {text-align: left;}
@@ -40,12 +94,14 @@
     <!-- CHARACTER INFORMATION-->
     <table>
       <tr>
+        <td class="grab">&#9776;</td>
         <th contenteditable>Name</th><td style="width:15%" contenteditable></td>
         <th contenteditable>Class & Level</th><td style="width:15%" contenteditable></td>
         <th contenteditable>Subclass</th><td style="width:15%" contenteditable></td>
         <th contenteditable>Species</th><td style="width:15%" contenteditable></td>
       </tr>
       <tr>
+        <td class="grab">&#9776;</td>
         <th contenteditable>Background</th><td style="width:15%" contenteditable></td>
         <th contenteditable>Alignment</th><td style="width:15%" contenteditable></td>
         <th contenteditable>Experience</th><td style="width:15%" contenteditable></td>
