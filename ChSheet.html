@@ -152,19 +152,19 @@
 
     <script>
       function Grab(event) {
-        alert("grabbed!");
+        var tr = $(e.target).closest("TR"),
+          si = tr.index(),
+          sy = e.pageY,
+          b = $(document.body),
+          drag;
+        if (si == 0) return;
+        b.addClass("grabCursor").css("userSelect", "none");
+        tr.addClass("grabbed");
       }
     //Draggable code
     $(".grab").onmousedown(function(e) {
       alert("mousedown!");
-      var tr = $(e.target).closest("TR"),
-        si = tr.index(),
-        sy = e.pageY,
-        b = $(document.body),
-        drag;
-      if (si == 0) return;
-      b.addClass("grabCursor").css("userSelect", "none");
-      tr.addClass("grabbed");
+      
 
       function move(e) {
         alert("moved!");
