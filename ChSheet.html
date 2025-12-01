@@ -54,14 +54,14 @@
     <!-- CHARACTER INFORMATION-->
     <table>
       <tr>
-        <td class="grab">&#9776;</td>
+        <td class="grab" onmousedown="Grab(event)">&#9776;</td>
         <th contenteditable>Name</th><td style="width:15%" contenteditable></td>
         <th contenteditable>Class & Level</th><td style="width:15%" contenteditable></td>
         <th contenteditable>Subclass</th><td style="width:15%" contenteditable></td>
         <th contenteditable>Species</th><td style="width:15%" contenteditable></td>
       </tr>
       <tr>
-        <td class="grab">&#9776;</td>
+        <td class="grab" onmousedown="Grab(event)">&#9776;</td>
         <th contenteditable>Background</th><td style="width:15%" contenteditable></td>
         <th contenteditable>Alignment</th><td style="width:15%" contenteditable></td>
         <th contenteditable>Experience</th><td style="width:15%" contenteditable></td>
@@ -151,8 +151,11 @@
     </table>
 
     <script>
+      function Grab(event) {
+        alert("grabbed!");
+      }
     //Draggable code
-    $(".grab").mousedown(function(e) {
+    $(".grab").onmousedown(function(e) {
       alert("mousedown!");
       var tr = $(e.target).closest("TR"),
         si = tr.index(),
