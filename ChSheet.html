@@ -53,14 +53,14 @@
   <body>
     <!-- CHARACTER INFORMATION-->
     <table>
-      <tr>
+      <tr draggable='true' ondragstart='start()' ondragover='dragover()'>
         <td class="grab" onmousedown="Grab(event)">&#9776;</td>
         <th contenteditable>Name</th><td style="width:15%" contenteditable></td>
         <th contenteditable>Class & Level</th><td style="width:15%" contenteditable></td>
         <th contenteditable>Subclass</th><td style="width:15%" contenteditable></td>
         <th contenteditable>Species</th><td style="width:15%" contenteditable></td>
       </tr>
-      <tr>
+      <tr draggable='true' ondragstart='start()' ondragover='dragover()'>
         <td class="grab" onmousedown="Grab(event)">&#9776;</td>
         <th contenteditable>Background</th><td style="width:15%" contenteditable></td>
         <th contenteditable>Alignment</th><td style="width:15%" contenteditable></td>
@@ -151,49 +151,20 @@
     </table>
 
     <script>
-      function Grab(event) {
-        var tr = $(e.target).closest("TR"),
-          si = tr.index(),
-          sy = e.pageY,
-          b = $(document.body),
-          drag;
-        if (si == 0) return;
-        b.addClass("grabCursor").css("userSelect", "none");
-        tr.addClass("grabbed");
+      var row;
+      function start() {
+        row = event.target;
       }
-    //Draggable code
-    $(".grab").onmousedown(function(e) {
-      alert("mousedown!");
-      
+      function dragover() {
+        var e = event;
+        e.preventDefault();
 
-      function move(e) {
-        alert("moved!");
-        if (!drag && Math.abs(e.pageY - sy) < 10) return;
-        drag = true;
-        tr.siblings().each(function() {
-          var s = $(this),
-            i = s.index(),
-            y = s.offset().top;
-        if (i > 0 && e.pageY >= y && e.pageY < y + s.outerHeight()) {
-          if (i < tr.index())
-            tr.insertAfter(s);
-          else
-            tr.insertBefore(s);
-          return false;
-        }
-        });
+        let children= Array.from(e.target.parentNode.parentNode.children);
+        if(children.indexOf(e.target.parentNode)>children.indexOf(row))
+          e.target.parentNode.after(row);
+        else
+          e.target.parentNode.before(row);
       }
-      function up(e) {
-        if (drag && si != tr.index()) {
-          drag = false;
-          alert("moved!");
-        }
-        $(document).unbind("mousemove", move).unbind("mouseup", up);
-        b.removeClass("grabCursor").css("userSelect", "none");
-        tr.removeClass("grabbed");
-      }
-      $(document).mousemove(move).mouseup(up);
-    });
-  </script>
+    </script>
   </body>
 </html>
