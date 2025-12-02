@@ -102,30 +102,93 @@
     <!-- SKILLS AND SAVING THROWS -->
     <table>
       <tr>
-        <th>Expert</th>
-        <th>Proficient</th>
+        <th>Proficiency</th>
         <th>Bonus</th>
         <th>Skill</th>
       </tr>
       <tr>
+        <th><input type="button" onclick="tristate2(this)" value="&#x25ef;" /></th>
+        <th><u>+0</u></th>
+        <th>Strength</th>
         <td><input type="button" onclick="tristate2(this)" value="&#x25ef;" /></td>
         <td><u>+0</u></td>
-        <td>Strength</td>
+        <td>Athletics</td>
+      </tr>
+      <tr>
+        <th><input type="button" onclick="tristate2(this)" value="&#x25ef;" /></th>
+        <th><u>+0</u></th>
+        <th>Dexterity</th>
         <td><input type="button" onclick="tristate2(this)" value="&#x25ef;" /></td>
         <td><u>+0</u></td>
-        <td>Dexterity</td>
+        <td>Acrobatics</td>
         <td><input type="button" onclick="tristate2(this)" value="&#x25ef;" /></td>
         <td><u>+0</u></td>
-        <td>Constitution</td>
+        <td>Slight of Hand</td>
         <td><input type="button" onclick="tristate2(this)" value="&#x25ef;" /></td>
         <td><u>+0</u></td>
-        <td>Intelligence</td>
+        <td>Stealth</td>
+      </tr>
+      <tr>
+        <th><input type="button" onclick="tristate2(this)" value="&#x25ef;" /></th>
+        <th><u>+0</u></th>
+        <th>Constitution</th> 
+      </tr>
+      <tr>
+        <th><input type="button" onclick="tristate2(this)" value="&#x25ef;" /></th>
+        <th><u>+0</u></th>
+        <th>Intelligence</th>
         <td><input type="button" onclick="tristate2(this)" value="&#x25ef;" /></td>
         <td><u>+0</u></td>
-        <td>Wisdom</td>
+        <td>Arcana</td>
         <td><input type="button" onclick="tristate2(this)" value="&#x25ef;" /></td>
         <td><u>+0</u></td>
-        <td>Charisma</td>
+        <td>History</td>
+        <td><input type="button" onclick="tristate2(this)" value="&#x25ef;" /></td>
+        <td><u>+0</u></td>
+        <td>Investigation</td>
+        <td><input type="button" onclick="tristate2(this)" value="&#x25ef;" /></td>
+        <td><u>+0</u></td>
+        <td>Nature</td>
+        <td><input type="button" onclick="tristate2(this)" value="&#x25ef;" /></td>
+        <td><u>+0</u></td>
+        <td>Religion</td>
+      </tr>
+      <tr>
+        <th><input type="button" onclick="tristate2(this)" value="&#x25ef;" /></th>
+        <th><u>+0</u></th>
+        <th>Wisdom</th>
+        <td><input type="button" onclick="tristate2(this)" value="&#x25ef;" /></td>
+        <td><u>+0</u></td>
+        <td>Animal Handling</td>
+        <td><input type="button" onclick="tristate2(this)" value="&#x25ef;" /></td>
+        <td><u>+0</u></td>
+        <td>Insight</td>
+        <td><input type="button" onclick="tristate2(this)" value="&#x25ef;" /></td>
+        <td><u>+0</u></td>
+        <td>Medicine</td>
+        <td><input type="button" onclick="tristate2(this)" value="&#x25ef;" /></td>
+        <td><u>+0</u></td>
+        <td>Perception</td>
+        <td><input type="button" onclick="tristate2(this)" value="&#x25ef;" /></td>
+        <td><u>+0</u></td>
+        <td>Survival</td>
+      </tr>
+      <tr>
+        <th><input type="button" onclick="tristate2(this)" value="&#x25ef;" /></th>
+        <th><u>+0</u></th>
+        <th>Charisma</th>
+        <td><input type="button" onclick="tristate2(this)" value="&#x25ef;" /></td>
+        <td><u>+0</u></td>
+        <td>Deception</td>
+        <td><input type="button" onclick="tristate2(this)" value="&#x25ef;" /></td>
+        <td><u>+0</u></td>
+        <td>Intimidation</td>
+        <td><input type="button" onclick="tristate2(this)" value="&#x25ef;" /></td>
+        <td><u>+0</u></td>
+        <td>Performance</td>
+        <td><input type="button" onclick="tristate2(this)" value="&#x25ef;" /></td>
+        <td><u>+0</u></td>
+        <td>Persuasion</td>
       </tr>
     </table>
     
@@ -161,6 +224,22 @@
       //PROF-EXPERT BUTTON CODE
       function tristate2(control) {
         tristate(control, '\u25ef', '\u25ce', '\u25c9');
+      }
+      function tristate(control, value1, value2, value3) {
+        switch (control.value.charAt(0)) {
+          case value1:
+              control.value = value2;
+              break;
+          case value2:
+              control.value = value3;
+              break;
+          case value3:
+              control.value = value1;
+              break;
+          default:
+            // display the current value if it's unexpected
+            alert(control.value);
+        }
       }
       //ROW MOVEMENT CODE
       var row;
