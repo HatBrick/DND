@@ -256,6 +256,16 @@
     </table>
     <script src="DataValidation/DND2024CharacterCreation.js"></script>
     <script>
+      function myDisplayer(some) {
+  document.getElementById("demo").innerHTML = some;
+}
+
+async function AssignClassOptions() {return "hello";}//["Artificer", "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"];}
+
+AssignClassOptions().then(
+  function(value) {myDisplayer(value);},
+  function(error) {myDisplayer(error);}
+);
       //PROF-EXPERT BUTTON CODE
       function tristate2(control) {
         tristate(control, '\u25ef', '\u25ce', '\u25c9');
