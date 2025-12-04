@@ -6,7 +6,9 @@ function myDisplayer(some) {
 
 async function AssignClassOptions() {return "hello";}//["Artificer", "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"];}
 
-myFunction().then(
+AssignClassOptions().then(
   function(value) {myDisplayer(value);},
   function(error) {myDisplayer(error);}
 );
+
+
