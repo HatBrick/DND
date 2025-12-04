@@ -1,11 +1,10 @@
 var classSelects = document.GetElementByClassName("CharacterClass");
-var classOptions = ["Artificer", "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"];
 
 function myDisplayer(some) {
-  alert(classOptions);
+  alert(some);
 }
 
-async function AssignClassOptions() {return classOptions;}
+async function AssignClassOptions() {return ["Artificer", "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"];}
 
 myFunction().then(
   function(value) {myDisplayer(value);},
