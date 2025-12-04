@@ -1,0 +1,64 @@
+<html>
+  <body>
+    <label for="name">Character Name:</label>
+    <input type="text" id="CHname" name="name">
+    
+    <label for="class">Character Class:</label>
+    <select id="CHclass" name="class">
+      <option value="">--Choose Your Class--</option>
+      <option value="barb">Barbarian</option>
+      <option value="bard">Bard</option>
+      <option value="cler">Cleric</option>
+      <option value="drui">Druid</option>
+      <option value="figh">Fighter</option>
+      <option value="monk">Monk</option>
+      <option value="pala">Paladin</option>
+      <option value="rang">Ranger</option>
+      <option value="rogu">Rogue</option>
+      <option value="sorc">Sorcerer</option>
+      <option value="warl">Warlock</option>
+      <option value="wiza">Wizard</option>
+    </select>
+    
+    <label for="lvl">Level:</label>
+    <input type="number" id="quantity" name="lvl" min="1" max="20">
+    
+    <label for="spec">Character Species:</label>
+    <select id="CHSpecies" name="spec">
+      <option value="">--Choose Your Species--</option>
+      <option value="drag">Dragonborn</option>
+      <option value="dwar">Dwarf</option>
+      <option value="elf">Elf</option>
+      <option value="half">Halfling</option>
+      <option value="huma">Human</option>
+    </select>
+
+    <label for="background">Character Background:</label>
+    <select id="CHBackground" name="background">
+      <option value="">--Choose Your Background--</option>
+      <option value="acol">Acolyte</option>
+      <option value="char">Charlatin</option>
+      <option value="crim">Criminal</option>
+      <option value="ente">Entertainer</option>
+      <option value="nobl">Noble</option>
+      <option value="outl">Outlander</option>
+      <option value="urch">Urchin</option>
+    </select>
+
+    <label for="points">Available Points</label>
+    <input type="number" id="PointBuy" name="points" min="0" max="27" value="27" onKeyDown="return false">
+    
+    <label for="str">Strength</label>
+    <input type="number" id="CHStrength" name="str" min="8" max="15" value="8" onKeyDown="return false"><p id="BGBonusSTR"></p>
+    <label for="dex">Dexterity</label>
+    <input type="number" id="CHDexterity" name="dex" min="8" max="15" value="8" onKeyDown="return false"><p id="BGBonusDEX"></p>
+    <label for="con">Constitution</label>
+    <input type="number" id="CHConstitution" name="con" min="8" max="15" value="8" onKeyDown="return false"><p id="BGBonusCON"></p>
+    <label for="int">Intelligence</label>
+    <input type="number" id="Intelligence" name="int" min="8" max="15" value="8" onKeyDown="return false"><p id="BGBonusINT"></p>
+    <label for="wis">Wisdom</label>
+    <input type="number" id="CHWisdom" name="wis" min="8" max="15" value="8" onKeyDown="return false"><p id="BGBonusWIS"></p>
+    <label for="cha">Charisma</label>
+    <input type="number" id="CHCharisma" name="cha" min="8" max="15" value="8" onKeyDown="return false"><p id="BGBonusCHA"></p>
+    </body>
+</html>
