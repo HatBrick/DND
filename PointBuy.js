@@ -1,8 +1,8 @@
 var pointTotal = 75;
 var points = document.getElementById("PointBuy");
 var stats = document.getElementsByClassName("stat");
-var incButtons = document.getElementsByClassName("inc");
-var decButtons = document.getElementsByClassName("dec");
+var incButtons = document.getElementsByClassName("Inc");
+var decButtons = document.getElementsByClassName("Dec");
 var statValTotal = 0;
 
 for(let i = 0; i < incButtons.length; i++) {
