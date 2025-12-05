@@ -4,7 +4,7 @@ var stats = document.getElementsByClassName("stat");
 var statVals = document.getElementsByClassName("stat").values;
 
 for(let i = 0; i < stats.length; i++) {
-  stats[i].addEventListener("input", UpdateStatValue());
+  stats[i].addEventListener("input", UpdateStatValue);
 }
 
 function UpdateStatValue(e) {
