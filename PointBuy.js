@@ -7,6 +7,7 @@ var statValTotal = 0;
 
 for(let i = 0; i < incButtons.length; i++) {
   incButtons[i].addEventListener("input", UpdateStatValue);
+  decButtons[i].addEventListener("input", UpdateStatValue);
 }
 
 function UpdateStatValue() {
