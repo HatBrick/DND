@@ -11,6 +11,7 @@ for(let i = 0; i < incButtons.length; i++) {
 }
 
 function UpdateStatValue() {
+  console.log(document.getElementByID(this.id));
   thisStat = document.getElementByID(this.id);
   if(this.class == "Inc") {
     thisStat.value = parseInt(thisStat.value) + 1;
