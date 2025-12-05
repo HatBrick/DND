@@ -8,6 +8,7 @@ for(let i = 0; i < stats.length; i++) {
 }
 
 function UpdateStatValue(e) {
+  console.log(statVals);
   let currentTotal = 0;
   for(let i = 0; i < statVals.length; i++) {
     currentTotal += statVals[i];
