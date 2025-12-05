@@ -8,7 +8,10 @@ for(let i = 0; i < stats.length; i++) {
 }
 
 function UpdateStatValue(e) {
-  let currentTotal = statVals.reduce((partialSum, a) => partialSum + a, 0);
+  let currentTotal = 0;
+  for(let i = 0; i < statVals.length; i++) {
+    currentTotal += statVals[i];
+  }
   let pointsRemain = pointTotal-currentTotal;
   if(e == 14) {pointsRemain - 1;}
   if(e == 15) {pointsRemain - 2;}
