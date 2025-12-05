@@ -10,7 +10,7 @@ for(let i = 0; i < stats.length; i++) {
 function UpdateStatValue(e) {
   statValTotal = 0;
   for(let i = 0; i < stats.length; i++) {
-    statValTotal += stats[i].value;
+    statValTotal += parseInt(stats[i].value);
   }
   UpdatePointBuy(e);
 }
