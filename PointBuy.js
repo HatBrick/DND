@@ -1,9 +1,10 @@
 var pointTotal = 75;
 var points = document.getElementById("PointBuy");
 var stats = document.getElementsByClassName("stat");
-var statVals = document.getElementsByClassName("stat").values;
+var statVals = new Array(stats.length);
 
 for(let i = 0; i < stats.length; i++) {
+  statVals[i] = stats[i].value;
   stats[i].addEventListener("input", UpdateStatValue);
 }
 
