@@ -3,7 +3,9 @@ var points = document.getElementById("PointBuy");
 var stats = document.getElementsByClassName("stat");
 var statVals = document.getElementsByClassName("stat").values;
 
-stats.forEach(function(elem) { elem.addEventListener("input", UpdateStatValue())});
+for(let i = 0; i < stats.length; i++) {
+  stats[i].a.addEventListener("input", UpdateStatValue());
+}
 
 function UpdateStatValue(e) {
   let currentTotal = statVals.reduce((partialSum, a) => partialSum + a, 0);
