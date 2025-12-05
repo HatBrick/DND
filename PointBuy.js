@@ -4,11 +4,11 @@ var stats = document.getElementsByClassName("stat");
 var statValTotal = 0;
 
 for(let i = 0; i < stats.length; i++) {
-  statValTotal += stats[i].value;
   stats[i].addEventListener("input", UpdateStatValue);
 }
 
 function UpdateStatValue(e) {
+  statValTotal = 0;
   for(let i = 0; i < stats.length; i++) {
     statValTotal += stats[i].value;
   }
