@@ -6,6 +6,8 @@ var decButtons = document.getElementsByClassName("Dec");
 var statValTotal = 0;
 
 for(let i = 0; i < incButtons.length; i++) {
+  console.log(incButtons[i].id);
+  console.log(decButtons[i].id);
   incButtons[i].addEventListener("input", UpdateStatValue);
   decButtons[i].addEventListener("input", UpdateStatValue);
 }
