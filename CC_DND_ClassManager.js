@@ -4,7 +4,7 @@ const charLevelSelect = document.getElementById("LevelSelect");
 const classDesc = document.getElementById("ClassDescription");
 document.getElementById("ClassSelect").onload = function() {SetSelects()};
 
-const fileInput = "test.txt";
+const fileInput = 'test.txt';
 printFile(fileInput);
 
 function printFile(file) {
