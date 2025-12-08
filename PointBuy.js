@@ -37,7 +37,9 @@ function UpdateStatValue() {
 
 function UpdateStatBonus(stat, statID) {
   let bonus = (stat/2) - 5;
-  bonuses.find(item => item.id === statID).innerHTML = bonus;
+  for(let i = 0; i < bonuses.length; i++) {
+    if(bonuses[i].id == statID) { bonuses[i].innerHTML = bonus; break; }
+  }
 }
 
 function UpdatePointBuy(e, thisClass) {
