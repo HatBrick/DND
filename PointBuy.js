@@ -23,11 +23,16 @@ function UpdateStatValue() {
   for(let i = 0; i < stats.length; i++) {
     statValTotal += parseInt(stats[i].innerHTML);
   }
-  UpdatePointBuy(parseInt(thisStat.innerHTML));
+  UpdatePointBuy(parseInt(thisStat.innerHTML), this.className);
 }
 
-function UpdatePointBuy(e) {
+function UpdatePointBuy(e, thisClass) {
   let pointsRemain = pointTotal-statValTotal;
+  if(thisClass == "Inc") {
+    if(e >= 14) { pointsRemain = pointsRemain - 1; }
+  } else {
+    if(e >= 13) { pointsRemain = pointsRemain + 1; }
+  }
   points.value = pointsRemain;
   EnableDisable(pointsRemain);
 }
