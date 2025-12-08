@@ -57,6 +57,7 @@ function EnableDisable(pointsRemain) {
       if(pointsRemain == 1 && document.getElementById(incButtons[i].id).innerHTML >= 13) {
         incButtons[i].disabled = true;
         decButtons[i].disabled = false;
+      }
     }
   }
 }
