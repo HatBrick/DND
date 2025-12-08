@@ -28,8 +28,6 @@ function UpdateStatValue() {
 
 function UpdatePointBuy(e) {
   let pointsRemain = pointTotal-statValTotal;
-  if(e == 14) {pointsRemain - 1;}
-  if(e == 15) {pointsRemain - 2;}
   points.value = pointsRemain;
   EnableDisable(pointsRemain);
 }
@@ -41,8 +39,14 @@ function EnableDisable(pointsRemain) {
     } else if (pointsRemain == 27) {
       decButtons[i].disabled = true;
     } else {
-      incButtons[i].disabled = false;
-      decButtons[i].disabled = false;
+      if(document.getElementById(incButtons[i].id).innerHTML == 8) {
+        decButtons[i].disabled = true;
+      } else if(document.getElementById(incButtons[i].id).innerHTML == 15) {
+        incButtons[i].disabled = true;
+      } else {
+        incButtons[i].disabled = false;
+        decButtons[i].disabled = false;
+      }
     }
   }
 }
