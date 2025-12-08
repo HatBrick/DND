@@ -4,16 +4,15 @@ const charLevelSelect = document.getElementById("LevelSelect");
 const classDesc = document.getElementById("ClassDescription");
 document.getElementById("ClassSelect").onload = function() {SetSelects()};
 
-const fileInput = "test.text";
-const reader = new FileReader();
+const fileInput = "test.txt";
+printFile(fileInput);
 
-reader.addEventListener("load", () => {
-  // this will then display a text file
-  content.innerText = reader.result;
-});
-
-if (fileInput) {
-  reader.readAsText(fileInput);
+function printFile(file) {
+  const reader = new FileReader();
+  reader.onload = (evt) => {
+    console.log(evt.target.result);
+  };
+  reader.readAsText(file);
 }
 
 //Set Selects
