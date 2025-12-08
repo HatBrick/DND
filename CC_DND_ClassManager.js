@@ -4,15 +4,16 @@ const charLevelSelect = document.getElementById("LevelSelect");
 const classDesc = document.getElementById("ClassDescription");
 document.getElementById("ClassSelect").onload = function() {SetSelects()};
 
-const fileInput = 'test.txt';
-printFile(fileInput);
-
-function printFile(file) {
-  const reader = new FileReader();
-  reader.onload = (evt) => {
-    console.log(evt.target.result);
-  };
-  reader.readAsText(file);
+const url = 'test.txt';
+try {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`Response status: ${response.status}`);
+  }
+  const result = await response.json();
+  console.log(result);
+} catch (error) {
+  console.error(error.message);
 }
 
 //Set Selects
