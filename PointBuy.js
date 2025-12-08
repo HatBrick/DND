@@ -22,19 +22,17 @@ function UpdateStatValue() {
   statValTotal = 0;
   for(let i = 0; i < stats.length; i++) {
     statValTotal += parseInt(stats[i].innerHTML);
+    if(stats[i].innerHTML == 14) {
+      statValTotal ++;
+    } else if(stats[i].innerHTML == 15) {
+      statValTotal += 2;
+    }
   }
   UpdatePointBuy(parseInt(thisStat.innerHTML), this.className);
 }
 
 function UpdatePointBuy(e, thisClass) {
   let pointsRemain = pointTotal-statValTotal;
-  if(thisClass == "Inc") {
-    if(e == 14) { pointsRemain = pointsRemain - 1; }
-    if(e == 15) { pointsRemain = pointsRemain - 2; }
-  } else {
-    if(e == 13) { pointsRemain = pointsRemain + 1; }
-    if(e == 14) { pointsRemain = pointsRemain + 2; }
-  }
   points.value = pointsRemain;
   EnableDisable(pointsRemain);
 }
