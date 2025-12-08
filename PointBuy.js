@@ -32,5 +32,6 @@ function UpdatePointBuy(e) {
   let pointsRemain = pointTotal-statValTotal;
   if(e == 14) {pointsRemain - 1;}
   if(e == 15) {pointsRemain - 2;}
+  console.log(pointsRemain);
   points.value = pointsRemain;
 }
