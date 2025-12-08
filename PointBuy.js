@@ -29,9 +29,11 @@ function UpdateStatValue() {
 function UpdatePointBuy(e, thisClass) {
   let pointsRemain = pointTotal-statValTotal;
   if(thisClass == "Inc") {
-    if(e >= 14) { pointsRemain = pointsRemain - 1; }
+    if(e == 14) { pointsRemain = pointsRemain - 1; }
+    if(e == 15) { pointsRemain = pointsRemain - 2; }
   } else {
-    if(e >= 13) { pointsRemain = pointsRemain + 1; }
+    if(e == 13) { pointsRemain = pointsRemain + 1; }
+    if(e == 14) { pointsRemain = pointsRemain + 2; }
   }
   points.value = pointsRemain;
   EnableDisable(pointsRemain);
