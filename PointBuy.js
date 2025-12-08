@@ -13,28 +13,23 @@ for(let i = 0; i < incButtons.length; i++) {
 }
 
 function UpdateStatValue() {
-  console.log(document.getElementById(this.id));
   thisStat = document.getElementById(this.id);
   if(this.class == "Inc") {
-    thisStat.value = parseInt(thisStat.value) + 1;
+    thisStat.value = parseInt(thisStat.innerHTML) + 1;
   } else {
-    thisStat.value = parseInt(thisStat.value) - 1;
+    thisStat.value = parseInt(thisStat.innerHTML) - 1;
   }
   
   statValTotal = 0;
   for(let i = 0; i < stats.length; i++) {
-    statValTotal += parseInt(stats[i].value);
-    console.log(statValTotal);
+    statValTotal += parseInt(stats[i].innerHTML);
   }
-  UpdatePointBuy(parseInt(thisStat.value));
+  UpdatePointBuy(parseInt(thisStat.innerHTML));
 }
 
 function UpdatePointBuy(e) {
   let pointsRemain = pointTotal-statValTotal;
-  //if(e == 14) {pointsRemain - 1;}
-  //if(e == 15) {pointsRemain - 2;}
-  console.log(pointTotal);
-  console.log(statValTotal);
-  console.log(pointsRemain);
+  if(e == 14) {pointsRemain - 1;}
+  if(e == 15) {pointsRemain - 2;}
   points.value = pointsRemain;
 }
