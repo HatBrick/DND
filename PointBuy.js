@@ -24,8 +24,9 @@ function UpdateStatValue() {
   statValTotal = 0;
   for(let i = 0; i < stats.length; i++) {
     statValTotal += parseInt(stats[i].value);
+    console.log(statValTotal);
   }
-  UpdatePointBuy(thisStat.value);
+  UpdatePointBuy(parseInt(thisStat.value));
 }
 
 function UpdatePointBuy(e) {
