@@ -4,16 +4,18 @@ const charLevelSelect = document.getElementById("LevelSelect");
 const classDesc = document.getElementById("ClassDescription");
 document.getElementById("ClassSelect").onload = function() {SetSelects()};
 
+async function getData() {
 const url = 'test.txt';
 try {
-  const response = fetch(url);
+  const response = await fetch(url);
   if (!response.ok) {
     throw new Error(`Response status: ${response.status}`);
   }
-  const result = response.json();
+  const result = await response.json();
   console.log(result);
 } catch (error) {
   console.error(error.message);
+}
 }
 
 //Set Selects
