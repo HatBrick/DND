@@ -36,9 +36,13 @@ function UpdateStatValue() {
 }
 
 function UpdateStatBonus(stat, statID) {
-  let bonus = (stat/2) - 5;
+  let bonus = Math.floor((stat/2)) - 5;
   for(let i = 0; i < bonuses.length; i++) {
-    if(bonuses[i].id == statID) { bonuses[i].innerHTML = bonus; break; }
+    if(bonuses[i].id == statID) { 
+      if(bonus < 0) { bonuses[i].innerHTML = bonus; }
+      else { bonuses[i].innerHTML = "+" + bonus; }
+      break; 
+    }
   }
 }
 
