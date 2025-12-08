@@ -17,6 +17,7 @@ try {
   console.error(error.message);
 }
 }
+getData();
 
 //Set Selects
 function SetSelects() {
