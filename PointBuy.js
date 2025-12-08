@@ -21,7 +21,7 @@ function UpdateStatValue() {
     thisStat.innerHTML = parseInt(thisStat.innerHTML) - 1;
   }
   //Update Stat Bonus
-  UpdateStatBonus(thisStat.innerHTML, thisStat);
+  UpdateStatBonus(thisStat.innerHTML, this.id);
   
   statValTotal = 0;
   for(let i = 0; i < stats.length; i++) {
