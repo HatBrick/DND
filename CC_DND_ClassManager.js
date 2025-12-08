@@ -6,7 +6,7 @@ document.getElementById("ClassSelect").onload = function() {SetSelects()};
 
 const url = 'test.txt';
 try {
-  const response = await fetch(url);
+  const response = fetch(url);
   if (!response.ok) {
     throw new Error(`Response status: ${response.status}`);
   }
