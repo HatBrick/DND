@@ -1,6 +1,7 @@
 var pointTotal = 75;
 var points = document.getElementById("PointBuy");
 var stats = document.getElementsByClassName("stat");
+var bonuses = document.getElementsByClassName("bonus");
 var incButtons = document.getElementsByClassName("Inc");
 var decButtons = document.getElementsByClassName("Dec");
 var statValTotal = 0;
@@ -13,11 +14,14 @@ for(let i = 0; i < incButtons.length; i++) {
 
 function UpdateStatValue() {
   thisStat = document.getElementById(this.id);
+  //Update Stat Val
   if(this.className == "Inc") {
     thisStat.innerHTML = parseInt(thisStat.innerHTML) + 1;
   } else {
     thisStat.innerHTML = parseInt(thisStat.innerHTML) - 1;
   }
+  //Update Stat Bonus
+  UpdateStatBonus(thisStat.innerHTML, thisStat);
   
   statValTotal = 0;
   for(let i = 0; i < stats.length; i++) {
@@ -29,6 +33,11 @@ function UpdateStatValue() {
     }
   }
   UpdatePointBuy(parseInt(thisStat.innerHTML), this.className);
+}
+
+function UpdateStatBonus(stat, statID) {
+  let bonus = (stat/2) - 5;
+  bonuses.getElementById(statID).innerHTML = bonus;
 }
 
 function UpdatePointBuy(e, thisClass) {
