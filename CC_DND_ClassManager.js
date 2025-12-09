@@ -25,6 +25,7 @@ fetch('test.txt') // Replace with the actual path to your text file
 
 //Set Selects
 function SetSelects() {
+  console.log("helloooo");
   //Set Class Selects
   var classOptions = ["--Select Your Class--", "Artificer", "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"];
   for (let i=0; i < classOptions.length; i++) {
