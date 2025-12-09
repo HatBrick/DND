@@ -2,7 +2,7 @@
 const charClassSelect = document.getElementById("ClassSelect");
 const charLevelSelect = document.getElementById("LevelSelect");
 const classDesc = document.getElementById("ClassDescription");
-SetSelect();
+SetSelects();
 
 fetch('test.txt') // Replace with the actual path to your text file
   .then(response => {
