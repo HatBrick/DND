@@ -68,7 +68,7 @@ function UpdateDesc(place, id) {
 
 function UpdateClassAbilitiesDesc() {
   descObj = document.querySelector("p#Class");
-  descObj.innerText = "test";
+  descObj.innerText = "";
   arrToUse = document.querySelector("select#Class").selectedIndex;
   index = document.querySelector("select#Level").selectedIndex;
   
