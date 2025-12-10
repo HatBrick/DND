@@ -3,7 +3,7 @@ const formArrays = new Array();
 
 function LoadForms(formRef) {
 //Grab Appropriate Rule List
-fetch('./CharacterCreationResources/DND2024Creation.txt') 
+fetch(formRef) 
   .then(response => { return response.text(); })
   .then(textData => { 
     SplitForms(textData.split("\n"));
