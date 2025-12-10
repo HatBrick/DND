@@ -42,7 +42,7 @@ function CreateSelect(arr) {
   return arr.push(select);
 }
 
-function CreateDesc(arr, pos) {
+function CreateDesc(arr) {
   let desc = document.createElement("p");
   desc.className = "CharacterForm";
   desc.id = arr[1];
