@@ -22,8 +22,8 @@ function SplitForms(formsList) {
 }
 
 function CreateCharacterForms(arr) {
-  if(arr[0] == "Select") { arr = CreateSelect(arr); }
-  if(arr[0] == "Desc") { arr = CreateDesc(arr); }
+  if(arr[0] == "Select") { CreateSelect(arr); }
+  if(arr[0] == "Desc") { CreateDesc(arr); }
   formArrays.push(arr);
 }
 
