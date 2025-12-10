@@ -17,6 +17,7 @@ fetch('test.txt')
   })
   .then(textData => {
     // textData now contains the content of your text file as a string
+    console.log(textData);
     formsText = textData;
     // You can then manipulate or display this text data as needed
   })
