@@ -45,10 +45,10 @@ function CreateSelect(arr) {
 
   if(arr[0] == "LevelClass")
     select.addEventListener("change", (event) => { UpdateClassAbilitiesDesc(event.target.selectedIndex+2, 
-                                                                            document.querySelectorAll("select#Level").selectedIndex+2, select.id) });
+                                                                            document.querySelectorAll("select#Level").selectedIndex+2) });
   else if (arr[0] == "Level")
     select.addEventListener("change", (event) => { UpdateClassAbilitiesDesc(document.querySelectorAll("select#LevelClass").selectedIndex+2, 
-                                                                            event.target.selectedIndex+2, select.id) });
+                                                                            event.target.selectedIndex+2) });
   else
     select.addEventListener("change", (event) => { UpdateDesc(event.target.selectedIndex+2, select.id) });
 }
@@ -68,14 +68,17 @@ function UpdateDesc(place, id) {
   }
 }
 
-function UpdateClassAbilitiesDesc(arrToUse, index, id) {
-  descObj = document.querySelectorAll("p#" + id);
-  descObj.innerText = "";
+function UpdateClassAbilitiesDesc(arrToUse, index) {
+  descObj = document.querySelectorAll("p#Class");
+  descObj.innerText = "test";
+  console.log(arrToUse);
+  console.log(index);
   let arr = new Array();
   let counter = 0;
   for(let i = 0; i < formArrays.length; i++) {
+    console.log(formArrays[i]);
     if(formArrays[i][0] == "ClassAbilitiesDesc") {
-      if(counter == arrToUse) { arr = formArrays[i]; } 
+      if(counter == arrToUse) { arr = formArrays[i]; break; } 
       else { counter++; }
     }
   }
