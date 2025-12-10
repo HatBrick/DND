@@ -47,7 +47,7 @@ function CreateSelect(arr, descObject) {
   if(arr[0] == "LevelClass")
     select.addEventListener("change", (event) => { UpdateClassAbilitiesDesc(event.target.selectedIndex+2, 
                                                                             document.querySelectorAll("select").getElementByID("Level"), descObject) });
-  if else (arr[0] == "Level")
+  else if (arr[0] == "Level")
     select.addEventListener("change", (event) => { UpdateClassAbilitiesDesc(document.querySelectorAll("select").getElementByID("LevelClass"), 
                                                                             event.target.selectedIndex+2, descObject) });
   else
