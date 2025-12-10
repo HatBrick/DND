@@ -52,6 +52,7 @@ function CreateDesc(arr, pos) {
 }
 
 function UpdateDesc(place, id) {
+  console.log("Change");
   for(let i = 0; i < formArrays.length; i++) {
     if(formArrays[i][1] == id && formArrays[i][0] == "Desc") {
       formArrays[i].at(-1).innerText = formArrays[i][place];
