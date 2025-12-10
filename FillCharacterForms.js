@@ -18,6 +18,7 @@ function SplitForms(formsList) {
   for(let i = 0; i < formsList.length; i++) {
     CreateCharacterForms(formsList[i].split(", "));
   }
+  console.log(formArrays);
 }
 
 function CreateCharacterForms(arr) {
