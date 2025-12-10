@@ -7,10 +7,16 @@ var formsList = new Array();
 LoadForms("./CharacterCreationResources/DND2024Creation.txt");
 
 function LoadForms(formRef) {
-  var fs = require("fs");
-  var text = fs.readFileSync(formRef).toString('utf-8');
-  formsList = text.split("|");
-  SetSelects();
+//Grab Appropriate Rule List
+fetch('./CharacterCreationResources/DND2024Creation.txt') 
+  .then(response => { return response.text(); })
+  .then(textData => { 
+    formsList = textData.split("|");
+    SetSelects(); })
+  .catch(error => {
+    // Handle any errors that occurred during the fetch operation
+    console.error('Error fetching the text file:', error);
+  });
 }
 
 //Set Selects
