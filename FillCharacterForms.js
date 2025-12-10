@@ -22,17 +22,16 @@ function SplitForms(formsList) {
 
 function CreateCharacterForms(arr) {
   if(arr[0] == "Select" || arr[0] == "LevelClass") {
-    let descObject = CreateDesc(arr[1]);
-    CreateSelect(arr, descObject); 
+    CreateDesc(arr[1]);
+    CreateSelect(arr); 
   }
   if(arr[0] == "Level") {
-    let descObject = document.querySelectorAll("p#Class");
-    CreateSelect(arr, descObject);
+    CreateSelect(arr);
   }
   formArrays.push(arr);
 }
 
-function CreateSelect(arr, descObject) {
+function CreateSelect(arr) {
   let select = document.createElement("select");
   select.className = "CharacterForm";
   select.id = arr[1];
@@ -46,12 +45,12 @@ function CreateSelect(arr, descObject) {
 
   if(arr[0] == "LevelClass")
     select.addEventListener("change", (event) => { UpdateClassAbilitiesDesc(event.target.selectedIndex+2, 
-                                                                            document.querySelectorAll("select#Level"), descObject) });
+                                                                            document.querySelectorAll("select#Level").selectedIndex+2, select.id) });
   else if (arr[0] == "Level")
-    select.addEventListener("change", (event) => { UpdateClassAbilitiesDesc(document.querySelectorAll("select#LevelClass"), 
-                                                                            event.target.selectedIndex+2, descObject) });
+    select.addEventListener("change", (event) => { UpdateClassAbilitiesDesc(document.querySelectorAll("select#LevelClass").selectedIndex+2, 
+                                                                            event.target.selectedIndex+2, select.id) });
   else
-    select.addEventListener("change", (event) => { UpdateDesc(event.target.selectedIndex+2, descObject) });
+    select.addEventListener("change", (event) => { UpdateDesc(event.target.selectedIndex+2, select.id) });
 }
 
 function CreateDesc(id) {
@@ -69,7 +68,8 @@ function UpdateDesc(place, id) {
   }
 }
 
-function UpdateClassAbilitiesDesc(arrToUse, index, descObj) {
+function UpdateClassAbilitiesDesc(arrToUse, index, id) {
+  descObj = document.querySelectorAll("p#" + id);
   descObj.innerText = "";
   let arr = new Array();
   let counter = 0;
