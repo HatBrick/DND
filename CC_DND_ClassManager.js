@@ -2,6 +2,7 @@
 const charClassSelect = document.getElementById("ClassSelect");
 const charLevelSelect = document.getElementById("LevelSelect");
 const classDesc = document.getElementById("ClassDescription");
+const formsList = new Array();
 SetSelects();
 
 //Grab Appropriate Rule List
@@ -16,7 +17,7 @@ fetch('./CharacterCreationResources/DND2024Creation.txt')
   })
   .then(textData => {
     // textData now contains the content of your text file as a string
-    const formsList = textData.split("/\r?\n/");
+    formsList = textData.split("/\r?\n/");
     // You can then manipulate or display this text data as needed
   })
   .catch(error => {
