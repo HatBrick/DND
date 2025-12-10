@@ -3,7 +3,7 @@ const charClassSelect = document.getElementById("ClassSelect");
 const charLevelSelect = document.getElementById("LevelSelect");
 const classDesc = document.getElementById("ClassDescription");
 var formsList = new Array();
-SetSelects();
+
 
 //Grab Appropriate Rule List
 fetch('./CharacterCreationResources/DND2024Creation.txt') 
@@ -27,7 +27,7 @@ fetch('./CharacterCreationResources/DND2024Creation.txt')
 
 //Set Selects
 function SetSelects() {
-  console.log(formsList[0]);
+  console.log(formsList.length);
   //Set Class Selects
   var classOptions = ["--Select Your Class--", "Artificer", "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"];
   for (let i=0; i < classOptions.length; i++) {
@@ -49,3 +49,5 @@ function SetSelects() {
 function UpdateDescription() {
   
 }
+
+SetSelects();
