@@ -52,9 +52,12 @@ function CreateDesc(arr) {
 }
 
 function UpdateDesc(place, id) {
-  console.log("Change");
+  console.log(place);
+  console.log(id);
   for(let i = 0; i < formArrays.length; i++) {
+    console.log(formArrays[i][1]);
     if(formArrays[i][1] == id && formArrays[i][0] == "Desc") {
+      console.log("Maybe the at just sucks");
       formArrays[i].at(-1).innerText = formArrays[i][place];
     }
   }
