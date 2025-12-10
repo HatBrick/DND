@@ -2,7 +2,7 @@
 const charClassSelect = document.getElementById("ClassSelect");
 const charLevelSelect = document.getElementById("LevelSelect");
 const classDesc = document.getElementById("ClassDescription");
-const formsList = new Array();
+var formsList = new Array();
 SetSelects();
 
 //Grab Appropriate Rule List
