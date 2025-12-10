@@ -15,10 +15,9 @@ fetch('./CharacterCreationResources/DND2024Creation.txt')
 }
 
 function SplitForms(formsList) {
-  for(let i = 0; i < formsList.length; i++) {
+  for(let i = 0; i < formsList.length-1; i++) {
     CreateCharacterForms(formsList[i].split(", "));
   }
-  console.log(formArrays);
 }
 
 function CreateCharacterForms(arr) {
@@ -39,8 +38,6 @@ function CreateSelect(arr) {
   }
   document.body.appendChild(select);
   select.addEventListener("change", (event) => { UpdateDesc(event.target.selectedIndex, select.id) });
-  
-  return arr.push(select);
 }
 
 function CreateDesc(arr) {
@@ -48,18 +45,12 @@ function CreateDesc(arr) {
   desc.className = "CharacterForm";
   desc.id = arr[1];
   document.body.appendChild(desc);
-
-  return arr.push(desc);
 }
 
 function UpdateDesc(place, id) {
-  console.log(place);
-  console.log(id);
   for(let i = 0; i < formArrays.length; i++) {
-    console.log(formArrays[i]);
     if(formArrays[i][1] == id && formArrays[i][0] == "Desc") {
-      console.log("Maybe the at just sucks");
-      formArrays[i].at(-1).innerText = formArrays[i][place];
+      document.getElementsByClassName("CharacterForm")[i] = formArrays[i][place];
     }
   }
 }
