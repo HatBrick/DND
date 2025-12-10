@@ -17,7 +17,7 @@ fetch('./CharacterCreationResources/DND2024Creation.txt')
   })
   .then(textData => {
     // textData now contains the content of your text file as a string
-    formsList = textData.split("/\r?\n/");
+    formsList = textData.split("|");
     SetSelects();
     // You can then manipulate or display this text data as needed
   })
