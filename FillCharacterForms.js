@@ -26,7 +26,7 @@ function CreateCharacterForms(arr) {
     CreateSelect(arr, descObject); 
   }
   if(arr[0] == "Level") {
-    let descObject = document.querySelectorAll("p").getElementByID("Class");
+    let descObject = document.querySelectorAll("p#Class");
     CreateSelect(arr, descObject);
   }
   formArrays.push(arr);
@@ -46,9 +46,9 @@ function CreateSelect(arr, descObject) {
 
   if(arr[0] == "LevelClass")
     select.addEventListener("change", (event) => { UpdateClassAbilitiesDesc(event.target.selectedIndex+2, 
-                                                                            document.querySelectorAll("select").getElementByID("Level"), descObject) });
+                                                                            document.querySelectorAll("select#Level"), descObject) });
   else if (arr[0] == "Level")
-    select.addEventListener("change", (event) => { UpdateClassAbilitiesDesc(document.querySelectorAll("select").getElementByID("LevelClass"), 
+    select.addEventListener("change", (event) => { UpdateClassAbilitiesDesc(document.querySelectorAll("select#LevelClass"), 
                                                                             event.target.selectedIndex+2, descObject) });
   else
     select.addEventListener("change", (event) => { UpdateDesc(event.target.selectedIndex+2, descObject) });
