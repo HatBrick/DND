@@ -4,27 +4,14 @@ const charLevelSelect = document.getElementById("LevelSelect");
 const classDesc = document.getElementById("ClassDescription");
 var formsList = new Array();
 
+LoadForms("./CharacterCreationResources/DND2024Creation.txt");
 
-//Grab Appropriate Rule List
-fetch('./CharacterCreationResources/DND2024Creation.txt') 
-  .then(response => {
-    // Check if the request was successful (status code 200-299)
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    // Parse the response body as plain text
-    return response.text(); 
-  })
-  .then(textData => {
-    // textData now contains the content of your text file as a string
-    formsList = textData.split("|");
-    SetSelects();
-    // You can then manipulate or display this text data as needed
-  })
-  .catch(error => {
-    // Handle any errors that occurred during the fetch operation
-    console.error('Error fetching the text file:', error);
-  });
+function LoadForms(formRef) {
+  var fs = require("fs");
+  var text = fs.readFileSync(formRef).toString('utf-8');
+  formsList = text.split("|");
+  SetSelects();
+}
 
 //Set Selects
 function SetSelects() {
