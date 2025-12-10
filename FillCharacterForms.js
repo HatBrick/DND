@@ -1,8 +1,3 @@
-//On Page Load
-const charClassSelect = document.getElementById("ClassSelect");
-const charLevelSelect = document.getElementById("LevelSelect");
-const classDesc = document.getElementById("ClassDescription");
-
 LoadForms("./CharacterCreationResources/DND2024Creation.txt");
 
 function LoadForms(formRef) {
@@ -10,7 +5,7 @@ function LoadForms(formRef) {
 fetch('./CharacterCreationResources/DND2024Creation.txt') 
   .then(response => { return response.text(); })
   .then(textData => { 
-    SplitForms(textData.split("|"));
+    SplitForms(textData.split("\n"));
   })
   .catch(error => {
     // Handle any errors that occurred during the fetch operation
