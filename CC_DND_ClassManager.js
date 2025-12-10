@@ -6,7 +6,7 @@ var formsText = "";
 
 
 //Grab Appropriate Rule List
-fetch('./CharacterCreationResources/DND2024Creation.txt') 
+fetch('test.txt') 
   .then(response => {
     // Check if the request was successful (status code 200-299)
     if (!response.ok) {
