@@ -16,11 +16,11 @@ fetch('./CharacterCreationResources/DND2024Creation.txt')
 
 function SplitForms(formsList) {
   for(let i = 0; i < formsList.length; i++) {
-    CreateCharacterForms(formsList[i].split(", "), pos);
+    CreateCharacterForms(formsList[i].split(", "));
   }
 }
 
-function CreateCharacterForms(arr, pos) {
+function CreateCharacterForms(arr) {
   if(arr[0] == "Select") { arr = CreateSelect(arr); }
   if(arr[0] == "Desc") { arr = CreateDesc(arr); }
   formArrays.push(arr);
