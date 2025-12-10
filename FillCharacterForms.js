@@ -50,7 +50,7 @@ function CreateDesc(arr) {
 function UpdateDesc(place, id) {
   for(let i = 0; i < formArrays.length; i++) {
     if(formArrays[i][1] == id && formArrays[i][0] == "Desc") {
-      document.getElementsByClassName("CharacterForm")[i] = formArrays[i][place];
+      document.getElementsByClassName("CharacterForm")[i].innerText = formArrays[i][place];
     }
   }
 }
