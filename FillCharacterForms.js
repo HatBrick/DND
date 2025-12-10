@@ -37,7 +37,7 @@ function CreateSelect(arr) {
     select.appendChild(option);
   }
   document.body.appendChild(select);
-  select.addEventListener("change", (event) => { UpdateDesc(event.target.selectedIndex, select.id) });
+  select.addEventListener("change", (event) => { UpdateDesc(event.target.selectedIndex+2, select.id) });
 }
 
 function CreateDesc(arr) {
