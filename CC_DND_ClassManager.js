@@ -37,7 +37,7 @@ function CreateSelect(arr) {
     let option = document.createElement("option");
     option.setAttribute("value", arr[i]);
     option.text = arr[i];
-    select.appendChild(arr);
+    select.appendChild(option);
   }
   document.body.appendChild(select);
 }
