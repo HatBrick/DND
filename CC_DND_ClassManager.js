@@ -2,9 +2,11 @@
 const charClassSelect = document.getElementById("ClassSelect");
 const charLevelSelect = document.getElementById("LevelSelect");
 const classDesc = document.getElementById("ClassDescription");
+const formsList;
 SetSelects();
 
-fetch('test.txt') // Replace with the actual path to your text file
+//Grab Appropriate Rule List
+fetch('./CharacterCreationResources/DND2024Creation.txt') 
   .then(response => {
     // Check if the request was successful (status code 200-299)
     if (!response.ok) {
@@ -15,7 +17,7 @@ fetch('test.txt') // Replace with the actual path to your text file
   })
   .then(textData => {
     // textData now contains the content of your text file as a string
-    console.log(textData); 
+    formsList = textData.split("/\r?\n/");
     // You can then manipulate or display this text data as needed
   })
   .catch(error => {
@@ -25,6 +27,7 @@ fetch('test.txt') // Replace with the actual path to your text file
 
 //Set Selects
 function SetSelects() {
+  console.log(formsList[0]);
   //Set Class Selects
   var classOptions = ["--Select Your Class--", "Artificer", "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"];
   for (let i=0; i < classOptions.length; i++) {
