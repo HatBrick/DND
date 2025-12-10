@@ -2,11 +2,11 @@
 const charClassSelect = document.getElementById("ClassSelect");
 const charLevelSelect = document.getElementById("LevelSelect");
 const classDesc = document.getElementById("ClassDescription");
-var formsText = "";
+var formsList = new Array();
 
 
 //Grab Appropriate Rule List
-fetch('test.txt') 
+fetch('./CharacterCreationResources/DND2024Creation.txt') 
   .then(response => {
     // Check if the request was successful (status code 200-299)
     if (!response.ok) {
@@ -17,8 +17,8 @@ fetch('test.txt')
   })
   .then(textData => {
     // textData now contains the content of your text file as a string
-    console.log(textData);
-    formsText = textData;
+    formsList = textData.split("/\r?\n/");
+    SetSelects();
     // You can then manipulate or display this text data as needed
   })
   .catch(error => {
@@ -26,11 +26,8 @@ fetch('test.txt')
     console.error('Error fetching the text file:', error);
   });
 
-const formsList = formsText.split("/\r?\n/");
-
 //Set Selects
 function SetSelects() {
-  console.log(formsText);
   console.log(formsList.length);
   console.log(formsList[0]);
   console.log(formsList[1]);
@@ -55,5 +52,3 @@ function SetSelects() {
 function UpdateDescription() {
   
 }
-
-SetSelects();
