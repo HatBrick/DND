@@ -44,11 +44,9 @@ function CreateSelect(arr) {
   document.body.appendChild(select);
 
   if(arr[0] == "LevelClass")
-    select.addEventListener("change", (event) => { UpdateClassAbilitiesDesc(event.target.selectedIndex+2, 
-                                                                            document.querySelectorAll("select#Level").selectedIndex+2) });
+    select.addEventListener("change", (event) => { UpdateClassAbilitiesDesc(); });
   else if (arr[0] == "Level")
-    select.addEventListener("change", (event) => { UpdateClassAbilitiesDesc(document.querySelectorAll("select#Class").selectedIndex+2, 
-                                                                            event.target.selectedIndex+2) });
+    select.addEventListener("change", (event) => { UpdateClassAbilitiesDesc(); });
   else
     select.addEventListener("change", (event) => { UpdateDesc(event.target.selectedIndex+2, select.id) });
 }
@@ -68,9 +66,12 @@ function UpdateDesc(place, id) {
   }
 }
 
-function UpdateClassAbilitiesDesc(arrToUse, index) {
-  descObj = document.querySelectorAll("p#Class");
+function UpdateClassAbilitiesDesc() {
+  descObj = document.querySelector("p#Class");
   descObj.innerText = "test";
+  arrToUse = document.querySelector("select#Class").selectedIndex;
+  index = document.querySelector("select#Level").selectedIndex;
+  
   console.log(arrToUse);
   console.log(index);
   let arr = new Array();
