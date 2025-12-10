@@ -84,7 +84,7 @@ function UpdateClassAbilitiesDesc() {
     }
   }
 
-  for(let i = 0; i < index; i++) {
+  for(let i = 1; i < index; i++) {
     descObj.innerText += arr[i+2] + "\n\n";
   }
 }
