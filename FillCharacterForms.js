@@ -15,12 +15,15 @@ fetch(formRef)
 }
 
 function SplitForms(formsList) {
+  console.log(formsList.length);
   for(let i = 0; i < formsList.length-1; i++) {
     CreateCharacterForms(formsList[i].split("$"));
   }
 }
 
 function CreateCharacterForms(arr) {
+  console.log(arr.length);
+  console.log(arr);
   if(arr[0] == "Select") {
     if(arr[1] != "ClassLevel") {
       CreateDesc(arr[1]);
