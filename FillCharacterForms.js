@@ -21,8 +21,8 @@ function SplitForms(formsList) {
 }
 
 function CreateCharacterForms(arr) {
-  let newRow = document.getElementById("content").appendChild(document.createElement("TR"));
   if(arr[0] == "Select") {
+    let newRow = document.getElementById("content").appendChild(document.createElement("TR"));
     let th = newRow.appendChild(document.createElement("TH"));
     CreateSelect(arr, th); 
     if(arr[1] != "LevelClass") {
