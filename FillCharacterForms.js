@@ -54,14 +54,14 @@ function CreateSelect(arr, parent) {
 }
 
 function CreateDesc(id, parent) {
-  let desc = document.createElement("TEXTAREA");
+  let desc = document.createElement("p");
   desc.className = "CharacterForm";
   desc.id = id;
   parent.appendChild(desc);
 }
 
 function UpdateAbilityDesc(id, type="AbilityDesc", concat=false) {
-  var descObj = document.querySelector("TEXTAREA#" + id);
+  var descObj = document.querySelector("p#" + id);
   descObj.innerText = "";
   var index = document.querySelector("select#" + id).selectedIndex;
   
