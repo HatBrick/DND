@@ -1,4 +1,4 @@
-var pClass = document.querySelector("select#Class").value;
+var pClass = document.querySelector("select#Class").selectedIndex;
 var pLevel = document.querySelector("select#Level").value;
 var pSpecies = document.querySelector("select#Species").value;
 
