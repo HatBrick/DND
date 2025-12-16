@@ -49,15 +49,15 @@
       font-weight: inherit;
     }
   </style>
-  <body>
+  <body onLoad="Retrieve()">
     <p id="demo"></p>
     <!-- CHARACTER INFORMATION-->
     <table>
       <tr>
         <th contenteditable>Name</th><td style="width:15%" contenteditable></td>
-        <th>Class & Level</th><td style="width:15%"><select id="CharacterClass"></select></td>
+        <th>Class & Level</th><td style="width:15%"><p id="Class"></p><p id="Level"></p></td>
         <th contenteditable>Subclass</th><td style="width:15%" contenteditable></td>
-        <th contenteditable>Species</th><td style="width:15%" contenteditable></td>
+        <th>Species</th><td style="width:15%" contenteditable><p id="Species"></p></td>
       </tr>
       <tr style="border-bottom: 1px solid;">
         <th contenteditable>Background</th><td style="width:15%" contenteditable></td>
@@ -255,6 +255,7 @@
       </tr>
     </table>
     <script src="./DataValidation/DND2024CharacterCreation.js"></script>
+    <script src="LocalStorageManager.js"></script>
     <script>
       //PROF-EXPERT BUTTON CODE
       function tristate2(control) {
