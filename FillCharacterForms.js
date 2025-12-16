@@ -25,7 +25,7 @@ function CreateCharacterForms(arr) {
   console.log(arr.length);
   console.log(arr);
   if(arr[0] == "Select") {
-    if(arr[1] != "ClassLevel") {
+    if(arr[1] != "LevelClass") {
       CreateDesc(arr[1]);
     }
     CreateSelect(arr); 
@@ -67,15 +67,21 @@ function UpdateDesc(place, id) {
 }
 
 function UpdateAbilityDesc(id, type="AbilityDesc", concat=false) {
-  descObj = document.querySelector("p#" + id);
+  var descObj = document.querySelector("p#" + id);
   descObj.innerText = "";
-  let index = document.querySelector("select#" + id).selectedIndex;
+  var index = document.querySelector("select#" + id).selectedIndex;
+
+  console.log(descObj);
+  console.log(index);
+    
   
   arrToUse = (() => {
     for(let i = 0; i < formArrays.length; i++) {
       if(formArrays[i][0] == type && formArrays[i][1] == id) { return formArrays[i]; }
     }
   });
+
+  console.log(arrToUse);
 
   if(!concat) { 
     descObj.innerText = arrToUse[index+2]; 
