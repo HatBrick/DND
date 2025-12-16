@@ -19,6 +19,7 @@ function SplitForms(formsList) {
     CreateCharacterForms(formsList[i].split(", "));
   }
   UpdateClassAbilitiesDesc();
+  CreateLocalSave();
 }
 
 function CreateCharacterForms(arr) {
@@ -88,4 +89,5 @@ function UpdateClassAbilitiesDesc() {
   for(let i = 0; i < index+1; i++) {
     descObj.innerText += arr[i+2] + "\n\n";
   }
+  StoreLocalSave();
 }
