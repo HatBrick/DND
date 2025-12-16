@@ -1,11 +1,7 @@
-const pClass = document.querySelector("select#Class");
-const pLevel = document.querySelector("select#Level");
-const pSpecies = document.querySelector("select#Species");
-
 function StoreLocalSave() {
-  localStorage.setItem("Class", pClass.value);
-  localStorage.setItem("Level", pLevel.value);
-  localStorage.setItem("Species", pSpecies.value);
+  localStorage.setItem("Class", document.querySelector("select#Class").value);
+  localStorage.setItem("Level", document.querySelector("select#Level").value);
+  localStorage.setItem("Species", document.querySelector("select#Species").value);
 }
 
 function RetrieveLocalSave() {
