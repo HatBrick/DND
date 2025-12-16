@@ -73,6 +73,7 @@ function UpdateAbilityDesc(id, type="AbilityDesc", concat=false) {
 
   console.log(descObj);
   console.log(index);
+  console.log(type);
     
   
   arrToUse = new Array();
