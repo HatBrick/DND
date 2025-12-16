@@ -75,7 +75,7 @@ function UpdateAbilityDesc(id, type="AbilityDesc", concat=false) {
   console.log(index);
     
   
-  arrToUse = (() => {
+  arrToUse = (function() {
     for(let i = 0; i < formArrays.length; i++) {
       if(formArrays[i][0] == type && formArrays[i][1] == id) { return formArrays[i]; }
     }
