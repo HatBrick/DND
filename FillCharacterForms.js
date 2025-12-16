@@ -21,16 +21,19 @@ function SplitForms(formsList) {
 }
 
 function CreateCharacterForms(arr) {
+  let newRow = document.getElementById("content").appendChild(document.createElement("TR"));
   if(arr[0] == "Select") {
+    let th = newRow.appendChild(document.createElement("TH"));
+    CreateSelect(arr, th); 
     if(arr[1] != "LevelClass") {
-      CreateDesc(arr[1]);
+      let td = newRow.appendChild(document.createElement("TD"));
+      CreateDesc(arr[1], td);
     }
-    CreateSelect(arr); 
   }
   formArrays.push(arr);
 }
 
-function CreateSelect(arr) {
+function CreateSelect(arr, parent) {
   let select = document.createElement("select");
   select.className = "CharacterForm";
   select.id = arr[1];
@@ -40,7 +43,7 @@ function CreateSelect(arr) {
     option.text = arr[i];
     select.appendChild(option);
   }
-  document.body.appendChild(select);
+  parent.appendChild(select);
   
   if(arr[1] == "Level")
     select.addEventListener("change", (event) => { UpdateAbilityDesc(select.id, document.querySelector("select#LevelClass").value, true) });
@@ -54,7 +57,7 @@ function CreateDesc(id) {
   let desc = document.createElement("p");
   desc.className = "CharacterForm";
   desc.id = id;
-  document.body.appendChild(desc);
+  parent.appendChild(desc);
 }
 
 function UpdateAbilityDesc(id, type="AbilityDesc", concat=false) {
