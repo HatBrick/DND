@@ -54,7 +54,7 @@ function CreateSelect(arr, parent) {
 }
 
 function CreateDesc(id, parent) {
-  let desc = document.createElement("p");
+  let desc = document.createElement("TEXTAREA");
   desc.className = "CharacterForm";
   desc.id = id;
   parent.appendChild(desc);
