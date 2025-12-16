@@ -1,7 +1,7 @@
 LevelClass, Class, Artificer, Barbarian, Bard, Cleric, Druid, Fighter, Monk, Paladin, Ranger, Rogue, Sorcerer, Warlock, Wizard
 ClassAbilitiesDesc, Class, Artificer level 1 abilities, Artificer level 2 abilities, level 3, level 4, level 5, level 6, etc
-ClassAbilitiesDesc, Class, Barb level 1 abilities, Artificer level 2 abilities, level 3, level 4, level 5, level 6, etc
-ClassAbilitiesDesc, Class, Bard level 1 abilities, Artificer level 2 abilities, level 3, level 4, level 5, level 6, etc
-ClassAbilitiesDesc, Class, Cleric level 1 abilities, Artificer level 2 abilities, level 3, level 4, level 5, level 6, etc
+ClassAbilitiesDesc, Class, Barb level 1 abilities, Barb level 2 abilities, level 3, level 4, level 5, level 6, etc
+ClassAbilitiesDesc, Class, Bard level 1 abilities, Bard level 2 abilities, level 3, level 4, level 5, level 6, etc
+ClassAbilitiesDesc, Class, Cleric level 1 abilities, Cleric level 2 abilities, level 3, level 4, level 5, level 6, etc
 Level, Level, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
 Select, Species, Aasimar, Dragonborn, Dwarf, Elf, Gnome, Goliath, Halfling, Human, Orc, Tiefling
