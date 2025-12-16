@@ -45,7 +45,7 @@ function CreateSelect(arr) {
   }
   document.body.appendChild(select);
   
-  if(arr[0] == "Level")
+  if(arr[1] == "Level")
     select.addEventListener("change", (event) => { UpdateAbilityDesc(select.id, document.querySelector("select#LevelClass").value, true) });
   else
     select.addEventListener("change", (event) => { UpdateAbilityDesc(select.id) });
