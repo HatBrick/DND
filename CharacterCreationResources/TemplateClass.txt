@@ -1,0 +1,9 @@
+Barbarian$Health 1d12$Proficiencies: some$Level 1 - Rage
+
+you get to rage
+
+Level 1 - Something else
+
+You also get something else$Level 2
+
+And another thing for level 2
