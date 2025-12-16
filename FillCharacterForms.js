@@ -53,7 +53,7 @@ function CreateSelect(arr, parent) {
     select.addEventListener("change", (event) => { UpdateAbilityDesc(select.id) });
 }
 
-function CreateDesc(id) {
+function CreateDesc(id, parent) {
   let desc = document.createElement("p");
   desc.className = "CharacterForm";
   desc.id = id;
