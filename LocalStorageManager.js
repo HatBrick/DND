@@ -7,7 +7,7 @@ localStorage.setItem("Level", pLevel.value);
 localStorage.setItem("Species", pSpecies.value);
 
 function Retrieve() {
-  document.getElementByID("Class").innerHTML = localStorage.getItem("Class");
-  document.getElementByID("Level").innerHTML = localStorage.getItem("Level");
-  document.getElementByID("Species").innerHTML = localStorage.getItem("Species");
+  document.getElementById("Class").innerHTML = localStorage.getItem("Class");
+  document.getElementById("Level").innerHTML = localStorage.getItem("Level");
+  document.getElementById("Species").innerHTML = localStorage.getItem("Species");
 }
