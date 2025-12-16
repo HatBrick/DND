@@ -19,7 +19,6 @@ function SplitForms(formsList) {
     CreateCharacterForms(formsList[i].split(", "));
   }
   UpdateClassAbilitiesDesc();
-  CreateLocalSave();
 }
 
 function CreateCharacterForms(arr) {
