@@ -15,15 +15,12 @@ fetch(formRef)
 }
 
 function SplitForms(formsList) {
-  console.log(formsList.length);
   for(let i = 0; i < formsList.length-1; i++) {
     CreateCharacterForms(formsList[i].split("$"));
   }
 }
 
 function CreateCharacterForms(arr) {
-  console.log(arr.length);
-  console.log(arr);
   if(arr[0] == "Select") {
     if(arr[1] != "LevelClass") {
       CreateDesc(arr[1]);
@@ -47,7 +44,7 @@ function CreateSelect(arr) {
   
   if(arr[1] == "Level")
     select.addEventListener("change", (event) => { UpdateAbilityDesc(select.id, document.querySelector("select#LevelClass").value, true) });
-  else if (arr[0] == "LevelClass")
+  else if (arr[1] == "LevelClass")
     select.addEventListener("change", (event) => { UpdateAbilityDesc("Level", select.target.value, true) });
   else
     select.addEventListener("change", (event) => { UpdateAbilityDesc(select.id) });
