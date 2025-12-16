@@ -47,6 +47,8 @@ function CreateSelect(arr) {
   
   if(arr[1] == "Level")
     select.addEventListener("change", (event) => { UpdateAbilityDesc(select.id, document.querySelector("select#LevelClass").value, true) });
+  else if (arr[0] == "LevelClass")
+    select.addEventListener("change", (event) => { UpdateAbilityDesc(document.querySelector("select#Level").selectedIndex, select.target.value, true) });
   else
     select.addEventListener("change", (event) => { UpdateAbilityDesc(select.id) });
 }
@@ -58,23 +60,10 @@ function CreateDesc(id) {
   document.body.appendChild(desc);
 }
 
-function UpdateDesc(place, id) {
-  for(let i = 0; i < formArrays.length; i++) {
-    if(formArrays[i][1] == id && formArrays[i][0] == "Desc") {
-      document.getElementsByClassName("CharacterForm")[i].innerText = formArrays[i][place];
-    }
-  }
-}
-
 function UpdateAbilityDesc(id, type="AbilityDesc", concat=false) {
   var descObj = document.querySelector("p#" + id);
   descObj.innerText = "";
   var index = document.querySelector("select#" + id).selectedIndex;
-
-  console.log(descObj);
-  console.log(index);
-  console.log(type);
-    
   
   arrToUse = new Array();
   for(let i = 0; i < formArrays.length; i++) {
@@ -83,8 +72,6 @@ function UpdateAbilityDesc(id, type="AbilityDesc", concat=false) {
       break;
     }
   }
-
-  console.log(arrToUse);
 
   if(!concat) { 
     descObj.innerText = arrToUse[index+2]; 
