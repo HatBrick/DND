@@ -6,7 +6,7 @@ function LoadForms(formRef) {
 fetch(formRef) 
   .then(response => { return response.text(); })
   .then(textData => { 
-    SplitForms(textData.split("\n"));
+    SplitForms(textData.split("#"));
   })
   .catch(error => {
     // Handle any errors that occurred during the fetch operation
@@ -16,18 +16,16 @@ fetch(formRef)
 
 function SplitForms(formsList) {
   for(let i = 0; i < formsList.length-1; i++) {
-    CreateCharacterForms(formsList[i].split(", "));
+    CreateCharacterForms(formsList[i].split("$"));
   }
-  UpdateClassAbilitiesDesc();
 }
 
 function CreateCharacterForms(arr) {
-  if(arr[0] == "Select" || arr[0] == "LevelClass") {
-    CreateDesc(arr[1]);
+  if(arr[0] == "Select") {
+    if(arr[1] != "ClassLevel") {
+      CreateDesc(arr[1]);
+    }
     CreateSelect(arr); 
-  }
-  if(arr[0] == "Level") {
-    CreateSelect(arr);
   }
   formArrays.push(arr);
 }
@@ -43,13 +41,11 @@ function CreateSelect(arr) {
     select.appendChild(option);
   }
   document.body.appendChild(select);
-
-  if(arr[0] == "LevelClass")
-    select.addEventListener("change", (event) => { UpdateClassAbilitiesDesc(); });
-  else if (arr[0] == "Level")
-    select.addEventListener("change", (event) => { UpdateClassAbilitiesDesc(); });
+  
+  if(arr[0] == "Level")
+    select.addEventListener("change", (event) => { UpdateAbilityDesc(select.id, document.querySelector("select#LevelClass").value, true) });
   else
-    select.addEventListener("change", (event) => { UpdateDesc(event.target.selectedIndex+2, select.id) });
+    select.addEventListener("change", (event) => { UpdateAbilityDesc(select.id) });
 }
 
 function CreateDesc(id) {
@@ -67,25 +63,22 @@ function UpdateDesc(place, id) {
   }
 }
 
-function UpdateClassAbilitiesDesc() {
-  descObj = document.querySelector("p#Class");
+function UpdateAbilityDesc(id, type="AbilityDesc", concat=false) {
+  descObj = document.querySelector("p#" + id);
   descObj.innerText = "";
-  arrToUse = document.querySelector("select#Class").selectedIndex;
-  index = document.querySelector("select#Level").selectedIndex;
+  let index = document.querySelector("select#" + id).selectedIndex;
   
-  console.log(arrToUse);
-  console.log(index);
-  let arr = new Array();
-  let counter = 0;
-  for(let i = 0; i < formArrays.length; i++) {
-    console.log(formArrays[i]);
-    if(formArrays[i][0] == "ClassAbilitiesDesc") {
-      if(counter == arrToUse) { arr = formArrays[i]; break; } 
-      else { counter++; }
+  arrToUse = (() => {
+    for(let i = 0; i < formArrays.length; i++) {
+      if(formArrays[i][0] == type && formArrays[i][1] == id) { return formArrays[i]; }
     }
-  }
+  });
 
-  for(let i = 0; i < index+1; i++) {
-    descObj.innerText += arr[i+2] + "\n\n";
+  if(!concat) { 
+    descObj.innerText = arrToUse[index+2]; 
+  } else {
+    for(let i = 0; i < index+1; i++) {
+      descObj.innerText += arrToUse[i+2] + "\n\n";
+    }
   }
 }
