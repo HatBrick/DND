@@ -1,10 +1,10 @@
-var pClass = document.querySelector("select#Class");
-var pLevel = document.querySelector("select#Level");
-var pSpecies = document.querySelector("select#Species");
+var pClass = document.querySelector("select#Class").value;
+var pLevel = document.querySelector("select#Level").value;
+var pSpecies = document.querySelector("select#Species").value;
 
-localStorage.setItem("Class", pClass.value);
-localStorage.setItem("Level", pLevel.value);
-localStorage.setItem("Species", pSpecies.value);
+localStorage.setItem("Class", pClass);
+localStorage.setItem("Level", pLevel);
+localStorage.setItem("Species", pSpecies);
 
 function Retrieve() {
   document.getElementById("Class").innerHTML = localStorage.getItem("Class");
