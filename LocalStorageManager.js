@@ -1,10 +1,14 @@
-var pClass = document.querySelector("select#Class").value;
-var pLevel = document.querySelector("select#Level").value;
-var pSpecies = document.querySelector("select#Species").value;
+function Create() {
+  const pClass = document.querySelector("select#Class");
+  const pLevel = document.querySelector("select#Level");
+  const pSpecies = document.querySelector("select#Species");
+}
 
-localStorage.setItem("Class", pClass);
-localStorage.setItem("Level", pLevel);
-localStorage.setItem("Species", pSpecies);
+function Store() {
+  localStorage.setItem("Class", pClass).value;
+  localStorage.setItem("Level", pLevel).value;
+  localStorage.setItem("Species", pSpecies).value;
+}
 
 function Retrieve() {
   document.getElementById("Class").innerHTML = localStorage.getItem("Class");
