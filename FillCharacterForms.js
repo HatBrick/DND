@@ -61,7 +61,7 @@ function CreateDesc(id, parent) {
 }
 
 function UpdateAbilityDesc(id, type="AbilityDesc", concat=false) {
-  var descObj = document.querySelector("p#" + id);
+  var descObj = document.querySelector("TEXTAREA#" + id);
   descObj.innerText = "";
   var index = document.querySelector("select#" + id).selectedIndex;
   
