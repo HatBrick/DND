@@ -85,6 +85,6 @@ function UpdateClassAbilitiesDesc() {
   }
 
   for(let i = 0; i < index; i++) {
-    descObj.innerText += arr[i+3] + "\n\n";
+    descObj.innerText += arr[i+2] + "\n\n";
   }
 }
