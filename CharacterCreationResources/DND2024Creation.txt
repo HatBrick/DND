@@ -12,7 +12,7 @@ Desc$Species$Elf|You an elf$Dwarf|You a dwwarf#
 
 Desc$Background$Knight|You were knight$Noble|You were noble#
 
-Class$Rogue$Hit Dice|D8$Saving Throws|Dexterity, Intelligence$Skill Num|4$Skil lList|Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Persuasion, Sleight of Hand, Stealth$Tools|Thieves' Tools$Armor|Light#
+Rogue$Class$Hit Dice|D8$Saving Throws|Dexterity, Intelligence$Skill Num|4$Skil lList|Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Persuasion, Sleight of Hand, Stealth$Tools|Thieves' Tools$Armor|Light#
 
 Rogue$Level$Level 1 - Expertise
 Level 1 - Sneak Attack
