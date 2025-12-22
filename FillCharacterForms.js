@@ -6,7 +6,7 @@ function LoadForms(formRef) {
 fetch(formRef) 
   .then(response => { return response.text(); })
   .then(textData => { 
-    SplitForms(textData.split("#"));
+    SplitForms(textData.split("$\n\n"));
   })
   .catch(error => {
     // Handle any errors that occurred during the fetch operation
@@ -16,7 +16,7 @@ fetch(formRef)
 
 function SplitForms(formsList) {
   for(let i = 0; i < formsList.length-1; i++) {
-    CreateCharacterForms(formsList[i].split("$"));
+    CreateCharacterForms(formsList[i].split("#"));
   }
 }
 
