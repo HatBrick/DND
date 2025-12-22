@@ -1,12 +1,12 @@
-1#Class#Artificer#Barbarian#Bard#Cleric$
+1#ClassOptions#Artificer#Barbarian#Bard#Cleric$
 
 2#ClassDesc#Artificer%d8^half^Masters of invention, Artificers use ingenuity and magic to unlock extraordinary capabilities in objects. They see magic as a complex system waiting to be decoded and then harnessed in their spells and inventions.#Barbarian%d12^none^Hit things good#Bard%d8^full^Player music$
 
-1#Level#1#2#3#4#5$
+1#LevelOptions#1#2#3#4#5$
 
 2#ClassAbilities#Artificer%Level 1 - Spellcasting^Level 2 - Another thing^Level 3 - Yup^Level 4 - thing#Barbarian%Level 1^Level 2^Level 3$
 
-1#Species#Human#Dwarf$
+1#SpeciesOptions#Human#Dwarf$
 
 2#SpeciesTraits#Human%Extra skill^Poopyyy#Dwarf%Small^tought$
 
