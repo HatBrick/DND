@@ -1,19 +1,12 @@
-Select$Class$Rogue$Wizard#
+1#Class#Artificer#Barbarian#Bard#Cleric$
 
-Select$Level$1$2$3#
+2#ClassDesc#Artificer%d8^half^Masters of invention, Artificers use ingenuity and magic to unlock extraordinary capabilities in objects. They see magic as a complex system waiting to be decoded and then harnessed in their spells and inventions.#Barbarian%d12^none^Hit things good#Bard%d8^full^Player music$
 
-Select$Species$Elf$Dwarf#
+1#Level#1#2#3#4#5$
 
-Select$Background$Knight$Noble#
+2#ClassAbilities#Artificer%Level 1 - Spellcasting^Level 2 - Another thing^Level 3 - Yup^Level 4 - thing#Barbarian%Level 1^Level 2^Level 3$
 
-Desc$Class$Rogue|You are a rogue$Wizard|You are a wizard#
+1#Species#Human#Dwarf$
 
-Desc$Species$Elf|You an elf$Dwarf|You a dwwarf#
+2#SpeciesTraits#Human%Extra skill^Poopyyy#Dwarf%Small^tought$
 
-Desc$Background$Knight|You were knight$Noble|You were noble#
-
-Rogue$Class$Hit Dice|D8$Saving Throws|Dexterity, Intelligence$Skill Num|4$Skil lList|Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Persuasion, Sleight of Hand, Stealth$Tools|Thieves' Tools$Armor|Light#
-
-Rogue$Level$Level 1 - Expertise
-Level 1 - Sneak Attack
-Level 1 - Thieves' Cant$Level 2 - Cunning Action$Level 3 - Subclass#
