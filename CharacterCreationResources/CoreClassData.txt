@@ -4,12 +4,12 @@ Value#Desc#Barbarian=Barbarians are mighty warriors who are powered by primal fo
 
 Value#HitDie#Barbarian=12#Bard=8$
 
-Value#SavingProf#Barbarian=Strength, Constitution#Bard=Dexterity, Charisma$
+MultiValue#SavingProf#Barbarian=Strength, Constitution#Bard=Dexterity, Charisma$
 
-Value#SavingProf#Barbarian=2, Animal Handling, Athletics, Intimidation, Nature, Perception, Survival#Bard=3, All$
+MultiValue#SkillProf#Barbarian=2, Animal Handling, Athletics, Intimidation, Nature, Perception, Survival#Bard=3, All$
 
-Value#WeaponProf#Barbarian=Simple, Martial#Bard=Simple$
+MultiValue#WeaponProf#Barbarian=Simple, Martial#Bard=Simple$
 
-Value#ArmorProf#Barbarian=Light, Medium, Shield#Bard=Light$
+MultiValue#ArmorProf#Barbarian=Light, Medium, Shield#Bard=Light$
 
 Value#StartGold#Barbarian=75#Bard=90$
