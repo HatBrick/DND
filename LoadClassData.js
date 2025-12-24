@@ -18,7 +18,7 @@ fetch(formRef)
 
 function SplitForms(formsList) {
   for(let i = 0; i < formsList.length-1; i++) {
-    CreateCharacterForms(formsList[i].split("#"));
+    CreateArrays(formsList[i].split("#"));
   }
 }
 
