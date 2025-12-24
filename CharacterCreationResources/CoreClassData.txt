@@ -1,0 +1,15 @@
+Select#Class#Barbarian#Bard$
+
+Value#Desc#Barbarian=Barbarians are mighty warriors who are powered by primal forces of the multiverse that manifest as a Rage. More than a mere emotion—and not limited to anger—this Rage is an incarnation of a predator’s ferocity, a storm's fury, and a sea's turmoil.#Bard=Invoking magic through music, dance, and verse, Bards are expert at inspiring others, soothing hurts, disheartening foes, and creating illusions. Bards believe the multiverse was spoken into existence and that remnants of its Words of Creation still resound and glimmer on every plane of existence. Bardic magic attempts to harness those words, which transcend any language.$
+
+Value#HitDie#Barbarian=12#Bard=8$
+
+Value#SavingProf#Barbarian=Strength, Constitution#Bard=Dexterity, Charisma$
+
+Value#SavingProf#Barbarian=2, Animal Handling, Athletics, Intimidation, Nature, Perception, Survival#Bard=3, All$
+
+Value#WeaponProf#Barbarian=Simple, Martial#Bard=Simple$
+
+Value#ArmorProf#Barbarian=Light, Medium, Shield#Bard=Light$
+
+Value#StartGold#Barbarian=75#Bard=90$
