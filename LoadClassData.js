@@ -72,5 +72,6 @@ function CreateDataField(key) {
 }
 
 function UpdateDataField(type, key) {
+  console.log(dataList.get(type));
   document.getElementById(type).value = dataList.get(type).get(key);
 }
