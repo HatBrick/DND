@@ -1,7 +1,7 @@
 LoadForms("./CharacterCreationResources/CoreClassData.txt");
 const selectList = new Array();
 const dataList = new Map();
-let content = document.getElementByClassName("content");
+let content = document.getElementById("content");
 
 function LoadForms(formRef) {
 //Grab Appropriate Rule List
@@ -48,7 +48,7 @@ function CreateArrays(arr) {
 function CreateSelect(arr) {
   let contObj = document.createElement("div").className("contentObject");
   let select = document.createElement("select");
-  select.className = arr[0];
+  select.id = arr[0];
   for (let i = 1; i < arr.length; i++) {
     let option = document.createElement("option");
     option.setAttribute("value", arr[i]);
@@ -62,11 +62,11 @@ function CreateSelect(arr) {
 function CreateDataField(key) {
   let contObj = document.createElement("div").className("contentObject");
   let field = document.createElement("p");
-  field.className = key;
+  field.id = key;
   contObj.appendChild(field);
   content.appendChild(contObj);
 }
 
 function UpdateDataField(type, key) {
-  document.getElementByClassName(type).value = dataList.get(type.get(key));
+  document.getElementById(type).value = dataList.get(type.get(key));
 }
