@@ -46,7 +46,8 @@ function CreateArrays(arr) {
 }
 
 function CreateSelect(arr) {
-  let contObj = document.createElement("div").className("contentObject");
+  let contObj = document.createElement("div");
+  contObj.className("contentObject");
   let select = document.createElement("select");
   select.id = arr[0];
   for (let i = 1; i < arr.length; i++) {
@@ -60,7 +61,8 @@ function CreateSelect(arr) {
 }
 
 function CreateDataField(key) {
-  let contObj = document.createElement("div").className("contentObject");
+  let contObj = document.createElement("div")
+  contObj.className("contentObject");
   let field = document.createElement("p");
   field.id = key;
   contObj.appendChild(field);
