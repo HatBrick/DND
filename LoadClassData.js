@@ -58,6 +58,8 @@ function CreateSelect(arr) {
   }
   contObj.appendChild(select);
   content.appendChild(contObj);
+
+  select.addEventListener("change", (event) => { UpdateDataField(select.id, select.value) });
 }
 
 function CreateDataField(key) {
