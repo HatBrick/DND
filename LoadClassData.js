@@ -1,7 +1,7 @@
 LoadForms("./CharacterCreationResources/CoreClassData.txt");
-const selectList = new Array();
-const dataList = new Map();
-let content = document.getElementById("content");
+let selectList = new Array();
+let dataList = new Map();
+const content = document.getElementById("content");
 
 function LoadForms(formRef) {
 //Grab Appropriate Rule List
