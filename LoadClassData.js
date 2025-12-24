@@ -24,7 +24,7 @@ function SplitForms(formsList) {
 
 function CreateArrays(arr) {
   if(arr[0] == "Select") {
-    selectList = arr.substring(1);
+    selectList = arr.slice(1);
     CreateSelect(arr);
   } else if(arr[0] == "Value") {
     let newMap = new Map();
@@ -32,7 +32,7 @@ function CreateArrays(arr) {
       let val = arr[i].split("=");
       newMap.set(val[0], val[1]);
     }
-    dataList.set(arr[1], arr.substring(2));
+    dataList.set(arr[1], arr.slice(2));
     CreateDataField(arr[1]);
   } else if(arr[0] == "MultiValue") {
     let newMap = new Map();
@@ -40,7 +40,7 @@ function CreateArrays(arr) {
       let val = arr[i].split("=");
       newMap.set(val[0], val[1].split(","));
     }
-    dataList.set(arr[1], arr.substring(2));
+    dataList.set(arr[1], arr.slice(2));
     CreateDataField(arr[1]);
   }
 }
