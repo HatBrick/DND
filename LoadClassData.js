@@ -73,6 +73,14 @@ function CreateDataField(key) {
 
 function UpdateDataField(type, key) {
   console.log(dataList.size);
+  const mapIter = dataList.keys();
+
+  console.log(mapIter.next().value); // "0"
+  console.log(mapIter.next().value); // 1
+  console.log(mapIter.next().value); // "0"
+  console.log(mapIter.next().value); // 1
+  console.log(mapIter.next().value); // "0"
+  console.log(mapIter.next().value); // 1
   console.log(dataList.get(type));
   document.getElementById(type).value = dataList.get(type).get(key);
 }
